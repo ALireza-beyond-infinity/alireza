@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مرکز مشاوره و حل مسئله کسب‌وکار</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #111827;
+      --surface-soft: #1f2937;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #374151;
+      --danger: #ef4444;
+      --success: #10b981;
+      --radius: 14px;
+      --shadow: 0 20px 50px rgba(2, 6, 23, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: "Vazirmatn", Tahoma, Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top right, #1e3a8a 0%, #0f172a 45%, #020617 100%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+
+    .container {
+      width: min(980px, 92%);
+      margin: 42px auto;
+    }
+
+    .hero {
+      background: linear-gradient(140deg, rgba(37, 99, 235, 0.26), rgba(17, 24, 39, 0.9));
+      border: 1px solid rgba(147, 197, 253, 0.35);
+      border-radius: var(--radius);
+      padding: 34px 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 26px;
+    }
+
+    .hero h1 {
+      margin: 0 0 14px;
+      font-size: clamp(1.4rem, 2.7vw, 2rem);
+    }
+
+    .hero p {
+      margin: 0;
+      color: #d1d5db;
+      font-size: 1rem;
+    }
+
+    .card {
+      background: rgba(17, 24, 39, 0.9);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-title {
+      margin: 0 0 20px;
+      font-size: 1.2rem;
+      color: #f3f4f6;
+      border-right: 4px solid var(--primary);
+      padding-right: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    label {
+      color: #e5e7eb;
+      font-size: 0.95rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #4b5563;
+      background: var(--surface-soft);
+      color: var(--text);
+      padding: 12px;
+      font-size: 0.96rem;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #60a5fa;
+      box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.25);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    button {
+      border: none;
+      border-radius: 10px;
+      padding: 12px 18px;
+      background: var(--primary);
+      color: white;
+      font-size: 0.96rem;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    button:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .outline {
+      background: transparent;
+      border: 1px solid #6b7280;
+    }
+
+    .notice {
+      margin-top: 12px;
+      border: 1px solid rgba(59, 130, 246, 0.45);
+      border-radius: 10px;
+      padding: 10px 12px;
+      color: #bfdbfe;
+      background: rgba(30, 58, 138, 0.25);
+      font-size: 0.9rem;
+    }
+
+    .footer {
+      color: var(--muted);
+      text-align: center;
+      margin: 18px 0 8px;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 760px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        margin: 22px auto;
+      }
+
+      .hero,
+      .card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <h1>سامانه رسمی دریافت درخواست مشاوره و حل چالش‌های کسب‌وکار</h1>
+      <p>
+        اگر در مسیر راه‌اندازی کسب‌وکار هستید یا برای توسعه و حل مسائل کسب‌وکارتان به برنامه عملیاتی نیاز دارید،
+        فرم زیر را تکمیل کنید. اطلاعات شما محرمانه خواهد ماند و درخواست شما به‌صورت ایمیل دسته‌بندی‌شده ارسال می‌شود.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">ورود و ثبت اطلاعات درخواست</h2>
+      <form id="businessForm" action="https://formsubmit.co/YOUR_EMAIL@example.com" method="POST">
+        <div class="grid">
+          <div class="field">
+            <label for="fullName">نام و نام خانوادگی</label>
+            <input id="fullName" name="full_name" type="text" required placeholder="مثال: علی رضایی" />
+          </div>
+
+          <div class="field">
+            <label for="role">نوع مراجعه‌کننده</label>
+            <select id="role" name="role" required>
+              <option value="" selected disabled>انتخاب کنید</option>
+              <option value="startup">در حال راه‌اندازی کسب‌وکار</option>
+              <option value="owner">دارای کسب‌وکار فعال</option>
+              <option value="manager">مدیر / شریک / تصمیم‌گیر</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="email">ایمیل</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com" />
+          </div>
+
+          <div class="field">
+            <label for="phone">شماره تماس</label>
+            <input id="phone" name="phone" type="tel" required placeholder="09xxxxxxxxx" />
+          </div>
+
+          <div class="field">
+            <label for="businessName">نام کسب‌وکار / ایده</label>
+            <input id="businessName" name="business_name" type="text" placeholder="نام برند یا حوزه کاری" />
+          </div>
+
+          <div class="field">
+            <label for="category">دسته‌بندی اصلی مشکل</label>
+            <select id="category" name="category" required>
+              <option value="" selected disabled>انتخاب دسته‌بندی</option>
+              <option value="strategy">استراتژی و مدل کسب‌وکار</option>
+              <option value="marketing">بازاریابی و جذب مشتری</option>
+              <option value="sales">فروش و درآمد</option>
+              <option value="operations">عملیات و فرایندها</option>
+              <option value="finance">مالی و جریان نقدی</option>
+              <option value="team">تیم، منابع انسانی و مدیریت</option>
+              <option value="product">محصول، خدمت و تجربه مشتری</option>
+              <option value="other">سایر موارد</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="problem">شرح دقیق مسئله</label>
+            <textarea id="problem" name="problem_description" required placeholder="مسئله خود را با جزئیات کامل توضیح دهید: شرایط فعلی، چالش اصلی، اقداماتی که تاکنون انجام داده‌اید و نتیجه مورد انتظار..."></textarea>
+            <span class="hint">هرچه توضیحات دقیق‌تر باشد، طراحی برنامه اجرایی برای حل مشکل سریع‌تر و دقیق‌تر انجام می‌شود.</span>
+          </div>
+
+          <div class="field full">
+            <label for="priority">سطح فوریت</label>
+            <select id="priority" name="priority" required>
+              <option value="" selected disabled>انتخاب کنید</option>
+              <option value="urgent">فوری (کمتر از ۷ روز)</option>
+              <option value="normal">عادی (۱ تا ۴ هفته)</option>
+              <option value="longterm">میان‌مدت / بلندمدت</option>
+            </select>
+          </div>
+        </div>
+
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_subject" id="dynamicSubject" value="درخواست مشاوره جدید از وب‌سایت" />
+
+        <div class="notice">
+          نکته: برای فعال‌سازی ارسال ایمیل، مقدار <strong>YOUR_EMAIL@example.com</strong> را با ایمیل خودتان جایگزین کنید.
+        </div>
+
+        <div class="actions">
+          <button type="submit">ارسال درخواست</button>
+          <button type="reset" class="outline">پاک‌سازی فرم</button>
+        </div>
+      </form>
+    </section>
+
+    <p class="footer">© تمامی حقوق محفوظ است | بستر رسمی دریافت و تحلیل مسائل کسب‌وکار</p>
+  </main>
+
+  <script>
+    const form = document.getElementById("businessForm");
+    const categorySelect = document.getElementById("category");
+    const subjectInput = document.getElementById("dynamicSubject");
+
+    const categoryMap = {
+      strategy: "استراتژی و مدل کسب‌وکار",
+      marketing: "بازاریابی و جذب مشتری",
+      sales: "فروش و درآمد",
+      operations: "عملیات و فرایندها",
+      finance: "مالی و جریان نقدی",
+      team: "تیم و منابع انسانی",
+      product: "محصول و تجربه مشتری",
+      other: "سایر موارد"
+    };
+
+    form.addEventListener("submit", () => {
+      const selected = categorySelect.value;
+      const categoryName = categoryMap[selected] || "بدون دسته‌بندی";
+      subjectInput.value = `درخواست جدید مشاوره | دسته‌بندی: ${categoryName}`;
+    });
+  </script>
+</body>
+</html>
